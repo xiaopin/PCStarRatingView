@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K4X-kJ-Sa3" customClass="PCStarRatingView">
+                                <rect key="frame" x="20" y="60" width="335" height="40"/>
+                                <color key="backgroundColor" red="0.95686274510000002" green="0.52549019610000003" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="8Z1-31-VnT"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yG9-PJ-RgG">
+                                <rect key="frame" x="20" y="181" width="335" height="30"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="8Gx-Af-DHq"/>
+                                </constraints>
+                                <state key="normal" title="改变星星颜色"/>
+                                <connections>
+                                    <action selector="changeStarColorAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FxR-DX-bUP"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="改变星星之间的间距" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zFA-7e-Cui">
+                                <rect key="frame" x="20" y="221" width="138" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="qCl-us-pta">
+                                <rect key="frame" x="166" y="215" width="191" height="31"/>
+                                <connections>
+                                    <action selector="changeStarItemSpacingAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="shs-jL-dzN"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EmP-cA-vEW">
+                                <rect key="frame" x="20" y="150" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="修改星星数量" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SiL-Nu-7JC">
+                                <rect key="frame" x="20" y="259" width="92" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="8" translatesAutoresizingMaskIntoConstraints="NO" id="n7R-QI-4Iz">
+                                <rect key="frame" x="132" y="253.5" width="94" height="29"/>
+                                <connections>
+                                    <action selector="changeMaximumValueAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="kIX-Cz-QCO"/>
+                                </connections>
+                            </stepper>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="sVe-dM-93O">
+                                <rect key="frame" x="20" y="292.5" width="335" height="29"/>
+                                <segments>
+                                    <segment title="滑动多少算多少"/>
+                                    <segment title="半颗星星"/>
+                                    <segment title="整颗星星"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changeStarStateAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="wMz-dt-dQ7"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="修改星星边框宽度" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qeB-p9-LOl">
+                                <rect key="frame" x="20" y="330.5" width="122.5" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.5" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="y6V-GZ-epf">
+                                <rect key="frame" x="166" y="324.5" width="191" height="31"/>
+                                <connections>
+                                    <action selector="changeStarBorderWidthAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="zIZ-cP-Wgw"/>
+                                </connections>
+                            </slider>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入要修改的值" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fQ0-0r-znn">
+                                <rect key="frame" x="20" y="358.5" width="275" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="lH7-9X-dDo"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NbW-gM-4Lw">
+                                <rect key="frame" x="305" y="358.5" width="50" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Fxg-bC-dau"/>
+                                    <constraint firstAttribute="height" constant="30" id="UWy-dV-qPC"/>
+                                </constraints>
+                                <state key="normal" title="修改"/>
+                                <connections>
+                                    <action selector="changeValueButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r3I-bf-khW"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cj2-JE-EjE">
+                                <rect key="frame" x="20" y="398.5" width="335" height="29"/>
+                                <segments>
+                                    <segment title="Default"/>
+                                    <segment title="Midium"/>
+                                    <segment title="Large"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changeStarRadiusTypeAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="DED-GF-9sl"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="yG9-PJ-RgG" firstAttribute="top" secondItem="EmP-cA-vEW" secondAttribute="bottom" constant="10" id="0VV-oy-TBG"/>
+                            <constraint firstItem="y6V-GZ-epf" firstAttribute="centerY" secondItem="qeB-p9-LOl" secondAttribute="centerY" id="5zP-9d-5me"/>
+                            <constraint firstItem="SiL-Nu-7JC" firstAttribute="top" secondItem="zFA-7e-Cui" secondAttribute="bottom" constant="20" id="76s-kW-zGD"/>
+                            <constraint firstItem="y6V-GZ-epf" firstAttribute="leading" secondItem="qCl-us-pta" secondAttribute="leading" id="7V2-tR-xNR"/>
+                            <constraint firstItem="NbW-gM-4Lw" firstAttribute="top" secondItem="fQ0-0r-znn" secondAttribute="top" id="7jY-f0-lbQ"/>
+                            <constraint firstItem="sVe-dM-93O" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="BCk-H5-R9D"/>
+                            <constraint firstItem="n7R-QI-4Iz" firstAttribute="leading" secondItem="SiL-Nu-7JC" secondAttribute="trailing" constant="20" id="Cfm-QO-2nZ"/>
+                            <constraint firstAttribute="trailing" secondItem="sVe-dM-93O" secondAttribute="trailing" constant="20" id="D6U-8d-Wnd"/>
+                            <constraint firstItem="SiL-Nu-7JC" firstAttribute="leading" secondItem="zFA-7e-Cui" secondAttribute="leading" id="Dko-kp-nff"/>
+                            <constraint firstItem="qeB-p9-LOl" firstAttribute="top" secondItem="sVe-dM-93O" secondAttribute="bottom" constant="10" id="E5v-rY-V5E"/>
+                            <constraint firstItem="NbW-gM-4Lw" firstAttribute="leading" secondItem="fQ0-0r-znn" secondAttribute="trailing" constant="10" id="H4G-uB-VHa"/>
+                            <constraint firstItem="n7R-QI-4Iz" firstAttribute="centerY" secondItem="SiL-Nu-7JC" secondAttribute="centerY" id="IGC-Ye-LZp"/>
+                            <constraint firstItem="cj2-JE-EjE" firstAttribute="trailing" secondItem="yG9-PJ-RgG" secondAttribute="trailing" id="JeN-0T-YiK"/>
+                            <constraint firstItem="qCl-us-pta" firstAttribute="leading" secondItem="zFA-7e-Cui" secondAttribute="trailing" constant="10" id="K9f-8N-MA2"/>
+                            <constraint firstItem="EmP-cA-vEW" firstAttribute="top" secondItem="K4X-kJ-Sa3" secondAttribute="bottom" constant="50" id="KZv-N0-sP0"/>
+                            <constraint firstItem="y6V-GZ-epf" firstAttribute="trailing" secondItem="qCl-us-pta" secondAttribute="trailing" id="Ksx-Rx-zYq"/>
+                            <constraint firstItem="zFA-7e-Cui" firstAttribute="top" secondItem="yG9-PJ-RgG" secondAttribute="bottom" constant="10" id="NEe-pv-31g"/>
+                            <constraint firstItem="K4X-kJ-Sa3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="Rls-Bn-EKM"/>
+                            <constraint firstItem="yG9-PJ-RgG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="Tk2-k3-bxX"/>
+                            <constraint firstItem="qCl-us-pta" firstAttribute="trailing" secondItem="yG9-PJ-RgG" secondAttribute="trailing" id="VtI-do-pDh"/>
+                            <constraint firstItem="NbW-gM-4Lw" firstAttribute="trailing" secondItem="yG9-PJ-RgG" secondAttribute="trailing" id="gzT-Aa-da9"/>
+                            <constraint firstItem="K4X-kJ-Sa3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="hb0-g6-Ab9"/>
+                            <constraint firstItem="qeB-p9-LOl" firstAttribute="leading" secondItem="yG9-PJ-RgG" secondAttribute="leading" id="k1W-iS-zih"/>
+                            <constraint firstItem="fQ0-0r-znn" firstAttribute="top" secondItem="qeB-p9-LOl" secondAttribute="bottom" constant="10" id="m8X-dJ-kbi"/>
+                            <constraint firstItem="EmP-cA-vEW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="mwd-ZT-iEG"/>
+                            <constraint firstItem="fQ0-0r-znn" firstAttribute="leading" secondItem="yG9-PJ-RgG" secondAttribute="leading" id="p0T-QF-vea"/>
+                            <constraint firstItem="sVe-dM-93O" firstAttribute="top" secondItem="n7R-QI-4Iz" secondAttribute="bottom" constant="10" id="pyx-hs-02j"/>
+                            <constraint firstItem="cj2-JE-EjE" firstAttribute="top" secondItem="fQ0-0r-znn" secondAttribute="bottom" constant="10" id="q8J-Ik-fsG"/>
+                            <constraint firstItem="cj2-JE-EjE" firstAttribute="leading" secondItem="yG9-PJ-RgG" secondAttribute="leading" id="qK0-ar-WNC"/>
+                            <constraint firstItem="zFA-7e-Cui" firstAttribute="leading" secondItem="yG9-PJ-RgG" secondAttribute="leading" id="tC6-Dy-6Y2"/>
+                            <constraint firstItem="qCl-us-pta" firstAttribute="centerY" secondItem="zFA-7e-Cui" secondAttribute="centerY" id="ttb-nB-Jzo"/>
+                            <constraint firstAttribute="trailing" secondItem="EmP-cA-vEW" secondAttribute="trailing" constant="20" id="xKF-Qd-hnx"/>
+                            <constraint firstAttribute="trailing" secondItem="K4X-kJ-Sa3" secondAttribute="trailing" constant="20" id="y3i-kO-LDZ"/>
+                            <constraint firstAttribute="trailing" secondItem="yG9-PJ-RgG" secondAttribute="trailing" constant="20" id="zeR-od-Xyr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="starView" destination="K4X-kJ-Sa3" id="ksC-El-0gc"/>
+                        <outlet property="textField" destination="fQ0-0r-znn" id="wAt-Wr-slC"/>
+                        <outlet property="valueLabel" destination="EmP-cA-vEW" id="3XQ-AR-7pT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="38.23088455772114"/>
+        </scene>
+    </scenes>
+</document>
