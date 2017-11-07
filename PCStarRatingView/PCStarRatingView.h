@@ -22,7 +22,7 @@ typedef NS_ENUM(NSInteger, PCStarRatingViewRadiusType) {
 };
 
 
-IB_DESIGNABLE
+/*IB_DESIGNABLE*/
 @interface PCStarRatingView : UIControl
 
 /// star's color, default `tintColor`
